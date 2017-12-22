@@ -73,11 +73,11 @@ export default class First extends Component<{}> {
             renderItem={this._renderItem}
           />
           <Button 
-          title={'make it random'}
+          title={'make it random recurisvly '}
             onPress={this.makeRandom}
           />
           <Button 
-          title={'make it random 2'}
+          title={'make it random with ES6 syntax'}
             onPress={this.makeRandomTwo}
           />
           <Button 
