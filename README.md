@@ -1,4 +1,4 @@
-[screenshot](http://www.giphy.com/gifs/xULW8HCCDm3z1IWWt2)
+![alt text](http://www.giphy.com/gifs/xULW8HCCDm3z1IWWt2)
 git clone this project
 cd to this project directory
 npm i 
