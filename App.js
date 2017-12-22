@@ -21,7 +21,7 @@ export default class App extends Component<{}> {
    componentWillMount() {
     axios.get('https://jsonplaceholder.typicode.com/photos')
     .then(res => {
-        this.setState({data: res.data})
+        this.setState({data:_.drop(res.data, 4300)})
     })
   }
   _keyExtractor = (item, index) => item.id;
@@ -38,8 +38,25 @@ export default class App extends Component<{}> {
       </View>
     )
   }
+  
   makeRandom =() => {
-    console.log("this make me random")
+    const {data} = this.state
+    const recursiveShuffle = (datas) => {
+      if (datas.length === 1) return datas;
+      
+      const randomNum = datas.splice(Math.floor(Math.random() * datas.length), 1)[0];
+      
+      return [randomNum, ...recursiveShuffle(datas)]
+    }
+     this.setState({data: recursiveShuffle(data)})
+    // newData.push(() => this.recursiveShuffle(data))
+    // this.setState({data: newData})
+    
+  }
+  makeRandomTwo =() => {
+    console.log(this.state.data)
+
+
   }
   render() {
     console.log(this.state.data)
@@ -55,6 +72,10 @@ export default class App extends Component<{}> {
       <Button 
       title={'make it random'}
         onPress={this.makeRandom}
+      />
+       <Button 
+      title={'make it random 2'}
+        onPress={this.makeRandomTwo}
       />
       </View>
     );
