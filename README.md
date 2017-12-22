@@ -1,7 +1,7 @@
 git clone this project
 cd to this project directory
 npm i 
-beacuse i change this the react native SwipeableParallaxCarousel code
+beacuse i change code in react native SwipeableParallaxCarousel package 
 you need to replace below code with this file ./node_modules/SwipeableParallexCarsoule/index.js
 then react-native run-ios 
 
